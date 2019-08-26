@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #5 - Debugando código Python no Visual Studio Code | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/pythonvscode.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#5 - Debugando código Python no Visual Studio Code | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#5 - Debugando código Python no Visual Studio Code" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Foto de capa tirada deste link aqui" />
+<meta property="og:description" content="Foto de capa tirada deste link aqui" />
+<link rel="canonical" href="http://localhost:4000/programming/debug-python-vscode.html" />
+<meta property="og:url" content="http://localhost:4000/programming/debug-python-vscode.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/pythonvscode.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-14T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#5 - Debugando código Python no Visual Studio Code","dateModified":"2018-07-14T00:00:00-03:00","datePublished":"2018-07-14T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/pythonvscode.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/debug-python-vscode.html"},"url":"http://localhost:4000/programming/debug-python-vscode.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Foto de capa tirada deste link aqui","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #5 - Debugando código Python no Visual Studio Code
+</h1>
+
+
+  <img src="/assets/img/coverPosts/pythonvscode.png">
+
+
+<blockquote>
+  <p>Foto de capa tirada deste link <a href="https://code.visualstudio.com/docs/python/python-tutorial">aqui</a></p>
+</blockquote>
+
+<p>Olá terráqueos, neste post super rápido vamos ver como debugar nossos códigos Python no Visual Studio Code, algo bem simples porém muito útil, então sem mais delongas vamos ao que interessa.</p>
+
+<p>Primeiro de tudo, você precisa ter o Python e o Vscode instalado, afinal né, o post é sobre isso ¯_(ツ)_/¯.</p>
+
+<p>Se você já tem o Python e o Vscode instalado, vai precisar instalar a extensão do Python no vscode, para isso vá no menu de extensões, no lado esquerdo da tela (ou aperte CTRL + Shift + X) e procure por Python. Dos resultados que vão ser apresentados, você deve procurar pela extensão oficial da Microsoft, que deve ser a primeira e mais baixada.</p>
+
+<p>Agora selecione o menu de Debug, que fica acima do de extensões (ou aperte CTRL + Shift + D). Por padrão não há nenhuma configuração sendo utilizada, para resolver isso clique em “Configure or Fix launch.json” e escolha Python, como mostrado na imagem abaixo:</p>
+
+<p><img src="../assets/img/pydebugvs.png" alt="Configurando debug python" /></p>
+
+<p>Depois de realizar o passo acima, a extensão do Python que você instalou anteriormente, vai se encarregar de criar o <strong>launch.json</strong> que nada mais é do que um arquivo contendo várias configurações pré definidas para que você consiga rodar e debugar seus códigos. Caso queira você pode adicionar configurações ou alterar às já existentes presentes no arquivo.</p>
+
+<p>Agora volte ao menu de debug e escolha uma configuração para o debug, você vai ver várias configurações que vão bem além de apenas Python, como as configurações para Django e Flask, porém por hora vamos utilizar a primeira da lista, Python: Current File, como mostrado na imagem abaixo:</p>
+
+<p><img src="../assets/img/configuration.png" alt="Configurando debug python" /></p>
+
+<p>Enquanto você estiver debugando, na barra de status será exibido a configuração que você escolheu para utilizar como na imagem abaixo:</p>
+
+<p><img src="../assets/img/configuration2.png" alt="Configurando debug python" /></p>
+
+<p>Agora tudo está pronto, adicione alguns break points em algum código seu e coloque ele para rodar (aperte F5), você vai ver algo como o da imagem abaixo:</p>
+
+<p><img src="../assets/img/debugando.png" alt="Configurando debug python" /></p>
+
+<p>Você pode usar o menu que é exibido para avançar, parar ou pular para o próximo trecho de código, ou utilizar os atalhos, por exemplo para avançar ao próximo ponto é só apertar F11.</p>
+
+<p>Então isso é tudo pessoal, como disse no começo, essa é uma dica rápido mais que espero que ajudem vocês. Até a próxima!</p>
+
+
+
+<span class="post-date">
+  Written on
+  
+  July
+  14th,
+  2018
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#5 - Debugando código Python no Visual Studio Code&amp;url=/programming/debug-python-vscode.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming/debug-python-vscode.html&amp;title=#5 - Debugando código Python no Visual Studio Code" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming/debug-python-vscode.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/using_args_and_kwargs_python.html">
+                #14 - How to use *args and **kwargs
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 26, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/http_server_with_python.html">
+                #13 - How to create a HTTP server with Python
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 22, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/strings_python_introduction.html">
+                #12 - A Brief Introduction of Strings in Python
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 7, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

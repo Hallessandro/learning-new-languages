@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #17 - Quick Tip - Array.prototype.concat() | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/array_concat.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#17 - Quick Tip - Array.prototype.concat() | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#17 - Quick Tip - Array.prototype.concat()" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hello everyone, I’m back, this time with a quick tip about how to use the concat() method to merge arrays in JavaScript, so no time to waste, let’s get started." />
+<meta property="og:description" content="Hello everyone, I’m back, this time with a quick tip about how to use the concat() method to merge arrays in JavaScript, so no time to waste, let’s get started." />
+<link rel="canonical" href="http://localhost:4000/programming,/javascript/array_concat.html" />
+<meta property="og:url" content="http://localhost:4000/programming,/javascript/array_concat.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/array_concat.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-17T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#17 - Quick Tip - Array.prototype.concat()","dateModified":"2019-07-17T00:00:00-03:00","datePublished":"2019-07-17T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/array_concat.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming,/javascript/array_concat.html"},"url":"http://localhost:4000/programming,/javascript/array_concat.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Hello everyone, I’m back, this time with a quick tip about how to use the concat() method to merge arrays in JavaScript, so no time to waste, let’s get started.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #17 - Quick Tip - Array.prototype.concat()
+</h1>
+
+
+  <img src="/assets/img/coverPosts/array_concat.png">
+
+
+<p>Hello everyone, I’m back, this time with a quick tip about how to use the <strong>concat()</strong> method to merge arrays in JavaScript, so no time to waste, let’s get started.</p>
+
+<p>The <strong>concat()</strong> method is used to merge one array with another array or element passed as parameter. As others JavaScript methods,<strong>concat()</strong> don’t change the original array, but instead returns a new array with all the changes.  Let’s see a example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">secondList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">firstList</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">secondList</span><span class="p">);</span>
+<span class="c1">//The result will be equal to [1,2,3,4,5,6]</span>
+</code></pre></div></div>
+<p>If you pass two or more diferents arrays as parameter to <strong>concat()</strong>, this will works to and the elements will be add in the new array, following the order of the parameters.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">secondArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">thirdArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">firstArray</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">secondArray</span><span class="p">,</span> <span class="nx">thirdArray</span><span class="p">);</span>
+<span class="c1">//The result will be equal to [1,2,3,4,5,6]</span>
+</code></pre></div></div>
+<p>We can pass too, single values or more complex elements like objects and these elements don’t need to be of the same type, we can concat a array of numbers with strings, there’s no problem.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">secondArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">stringNumber</span> <span class="o">=</span> <span class="s2">"5"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">objectTest</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"super_power"</span><span class="p">:</span> <span class="s2">"Money"</span><span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">firstArray</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">secondArray</span><span class="p">,</span> <span class="nx">stringNumber</span><span class="p">,</span> <span class="nx">objectTest</span><span class="p">);</span>
+<span class="c1">//The result will be equal to [1,2,3,4,"5",{"name": "Batman", "super_power": "Money"}]</span>
+</code></pre></div></div>
+<p>And for last, we can merge nested arrays, like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstArray</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="kd">const</span> <span class="nx">secondArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">thirdArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">firstArray</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">secondArray</span><span class="p">,</span> <span class="nx">thirdArray</span><span class="p">);</span>
+<span class="c1">//The result will be equal to [[1], 2, 3, 4, [5,6,7]]</span>
+</code></pre></div></div>
+<p>We can add a new value to one of the nested arrays, like this:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="s2">"0"</span><span class="p">);</span> 
+<span class="c1">//The result will be equal to [[1, "0"], 2, 3, 4, [5,6,7]]</span>
+</code></pre></div></div>
+<p>So, this is all for now folks, thanks for reading and see you soon!</p>
+
+
+<span class="post-date">
+  Written on
+  
+  July
+  17th,
+  2019
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#17 - Quick Tip - Array.prototype.concat()&amp;url=/programming,/javascript/array_concat.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming,/javascript/array_concat.html&amp;title=#17 - Quick Tip - Array.prototype.concat()" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming,/javascript/array_concat.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/clean/code/meaningful_names.html">
+                #16 - Meaningful Names - What I Learned With Clean Code
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 13, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/creating_charts_with_js.html">
+                #15 - Creating charts with JavaScript using PlotlyJS
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>March 24, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/controlando_arduino_com_j5.html">
+                #11 - Johnny Five - Controlling a Arduino Uno with JavaScript
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>December 1, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Hallessandro' Adventures</title>
+		<description>Developed with Jekyll and Github Pages</description>
+		<link></link>
+		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>#17 - Quick Tip - Array.prototype.concat()</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hello everyone, I’m back, this time with a quick tip about how to use the &lt;strong&gt;concat()&lt;/strong&gt; method to merge arrays in JavaScript, so no time to waste, let’s get started.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 17 Jul 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming,/javascript/array_concat.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming,/javascript/array_concat.html</guid>
+			</item>
+		
+			<item>
+				<title>#16 - Meaningful Names - What I Learned With Clean Code</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hi everyone, I’m back for a new post, this time with something a little different. In this post  we will talk about the chapter “Meaningful Names” of the book &lt;a href=&quot;https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Clean Code&lt;/a&gt;, write by Robert Cecil Martin also know as Uncle Bob.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 13 May 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming,/clean/code/meaningful_names.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming,/clean/code/meaningful_names.html</guid>
+			</item>
+		
+			<item>
+				<title>#15 - Creating charts with JavaScript using PlotlyJS</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Charts can be a great way to present information of a way that a reader can be understanding fast and easy. For example, if you want to say that in March your sales were 20% higher than in February, instead to say this in one or two paragraphs of text you can show this in a simple chart bar like this:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sun, 24 Mar 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/creating_charts_with_js.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/creating_charts_with_js.html</guid>
+			</item>
+		
+			<item>
+				<title>#14 - How to use *args and **kwargs</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hi guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and today in this post let’s talk again about Python, this time how to use *args and **kwargs in our Python functions.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 26 Jan 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/using_args_and_kwargs_python.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/using_args_and_kwargs_python.html</guid>
+			</item>
+		
+			<item>
+				<title>#13 - How to create a HTTP server with Python</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hey guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and in this post I will show you how to create a HTTP server using Python, so let’s get start.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 22 Jan 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/http_server_with_python.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/http_server_with_python.html</guid>
+			</item>
+		
+			<item>
+				<title>#12 - A Brief Introduction of Strings in Python</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hey guys, today I will talk about how to use strings In Python, and some useful methods available. Strings in python are exactly equal a strings in other languages like Java or Javascript, a sequence of one or more characters.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 07 Jan 2019 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/strings_python_introduction.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/strings_python_introduction.html</guid>
+			</item>
+		
+			<item>
+				<title>#11 - Johnny Five - Controlling a Arduino Uno with JavaScript</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Sup guys, I’m back, this time to talk about Johnny Five, a JavaScript plataform for IoT and Robotic. In this post we will see how to control a Led by HTTP request.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 01 Dec 2018 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/controlando_arduino_com_j5.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/controlando_arduino_com_j5.html</guid>
+			</item>
+		
+			<item>
+				<title>#10 - Criação e integração de um bot ao RocketChat</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Olá terráqueos, no post de hoje vamos ver como criar um bot utilizando o Hubot, um robô customizável e open source, criado e distribuído pelo GitHub.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sun, 18 Nov 2018 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/criando-bot-com-hubot.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/criando-bot-com-hubot.html</guid>
+			</item>
+		
+			<item>
+				<title>#9 - How to build a Chatbot with DialogFlow</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hi guys, today I will talk about a very interesting thing called chatbot and how build one with DialogFlow, so I hope you enjoy.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sun, 14 Oct 2018 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html</guid>
+			</item>
+		
+			<item>
+				<title>#8 - JavaScript - Spread and Rest Operators</title>
+				
+					<dc:creator>Hallessandro D´villa</dc:creator>
+				
+				
+					<description>&lt;p&gt;Hi guys, today I have a quick tip where I will show you another cool functionality of modern JavaScript, the operators spread and rest. This little guys has been implanted in ES6 and bellow is a description of each one.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sat, 15 Sep 2018 00:00:00 -0300</pubDate>
+				<link>http://localhost:4000/programming/spread-and-rest-operators.html</link>
+				<guid isPermaLink="true">http://localhost:4000/programming/spread-and-rest-operators.html</guid>
+			</item>
+		
+	</channel>
+</rss>

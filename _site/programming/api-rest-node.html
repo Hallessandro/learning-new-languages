@@ -1,0 +1,722 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #6 - Construindo uma API REST com Node js | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/nodejs.jpeg" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#6 - Construindo uma API REST com Node js | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#6 - Construindo uma API REST com Node js" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Olá terráqueos, neste post vamos construir uma api rest utilizando Node JS e MongoDB. O projeto vai ser uma api de livros que vai poder ser acessada pelo endereço /livros, sendo capaz de responder aos métodos GET, POST, PUT e DELETE." />
+<meta property="og:description" content="Olá terráqueos, neste post vamos construir uma api rest utilizando Node JS e MongoDB. O projeto vai ser uma api de livros que vai poder ser acessada pelo endereço /livros, sendo capaz de responder aos métodos GET, POST, PUT e DELETE." />
+<link rel="canonical" href="http://localhost:4000/programming/api-rest-node.html" />
+<meta property="og:url" content="http://localhost:4000/programming/api-rest-node.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/nodejs.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-01T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#6 - Construindo uma API REST com Node js","dateModified":"2018-09-01T00:00:00-03:00","datePublished":"2018-09-01T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/nodejs.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/api-rest-node.html"},"url":"http://localhost:4000/programming/api-rest-node.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Olá terráqueos, neste post vamos construir uma api rest utilizando Node JS e MongoDB. O projeto vai ser uma api de livros que vai poder ser acessada pelo endereço /livros, sendo capaz de responder aos métodos GET, POST, PUT e DELETE.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #6 - Construindo uma API REST com Node js
+</h1>
+
+
+  <img src="/assets/img/coverPosts/nodejs.jpeg">
+
+
+<p>Olá terráqueos, neste post vamos construir uma api rest utilizando Node JS e MongoDB. O projeto vai ser uma api de livros que vai poder ser acessada pelo endereço /livros, sendo capaz de responder aos métodos GET, POST, PUT e DELETE.</p>
+
+<p>Primeiro de tudo, você precisa ter o Node e o MongoDB instalados, caso ainda não tenha, você pode dar uma conferida nos links abaixo, ambos da DigitalOcean:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Como Instalar o MongoDB no Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/como-instalar-o-mongodb-no-ubuntu-16-04-pt)
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Como Instalar o Node.js no Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/como-instalar-o-node-js-no-ubuntu-16-04-pt)
+</code></pre></div></div>
+
+<p>Feitas as devidas instações, vamos começar a criar nosso projeto, primeiro crie um diretório com o nome do projeto, no meu caso chamei de livros-api, e dentro dele crie os diretórios models, routes e conf, além do arquivo index.js.</p>
+
+<p>Agora em um terminal acesse o diretório do projeto e digite npm init, para criar o package.json do projeto. Durante esse processo algumas perguntas vão ser feitas, basta ir respondendo conforme sugerido.</p>
+
+<p>Agora vamos instalar o express e o babel, o primeiro é que há de melhor para se trabalhar com apis em Node, já o segundo é um módulo que permite a utilização de tudo que há de bom no JavaScript ES6/ES7, pois o Node ainda não da suporte completo para esses caras.</p>
+
+<blockquote>
+  <p>$ npm install babel-cli babel-preset-es2015 –save</p>
+
+  <p>$ npm install express –save</p>
+</blockquote>
+
+<p>Para que tudo funcione, precisamos linkar o plugin babel-preset-es2015, para que o babel reconheça códigos ES6, para isso basta adicionar na raiz do projeto o arquivo .babelrc, com o seguinte código:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"presets"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"es2015"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Agora vamos atualizar o package.json, mais especificamente a parte de scripts, onde vamos adicionar o start, que serve justamente para iniciar nosso projeto, quando o comando <strong>npm start</strong> for executado.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"babel-node index.js"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Repare no comando, babel-node, esse carinha é utilizado para compilar todo o código ES6/ES7 de forma que o node consiga entender.</p>
+
+<p>Agora em <strong>index.js</strong> vamos criar o primeiro código da api. Esse código vai carregar o express e criar um endpoint GET que vai retornar uma simples mensagem em formato JSON.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="na">status</span> <span class="p">:</span> <span class="s2">"Olá terráqueos"</span><span class="p">});</span>
+<span class="p">});</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Servidor rodando na porta 3000"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Para testar esse código, execute <strong>npm start</strong> no terminal, se tudo der certo, será exibido a mensagem de servidor rodando e você pode acessar <strong>http://localhost:3000/</strong> e ver a mensagem Olá terráqueos em formato JSON.</p>
+
+<p>Agora vamos implementar o GET /livros que vai retornar uma lista de livros. Por hora não estamos conectados a nenhum banco, então vamos retornar apenas uma lista de itens estáticos. Para isso adicione o código abaixo, logo depois do app.get() criado anteriormente.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+        <span class="na">livros</span> <span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="na">nome</span> <span class="p">:</span> <span class="s2">"O Hobbit"</span><span class="p">},</span> 
+            <span class="p">{</span><span class="na">nome</span> <span class="p">:</span> <span class="s2">"E não sobrou nenhum"</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Para ver se tudo funcionou como deveria, pare o servidor e inicie novamente, se tudo deu certo, você vai ver algo como:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"livros"</span><span class="p">:[{</span><span class="s2">"nome"</span><span class="p">:</span><span class="s2">"O Hobbit"</span><span class="p">},{</span><span class="s2">"nome"</span><span class="p">:</span><span class="s2">"E não sobrou nenhum"</span><span class="p">}]}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Nosso projeto é pequeno, mas pense um pouco, o que aconteceria se você fosse criar 20 ou 30 endpoints? O index.js ficaria enorme e nada organizado. Para resolver isso vamos adicionar o módulo consign ao projeto, que nos permite injetar e carregar dependências de forma simples.</p>
+
+<blockquote>
+  <p>npm i consign –save</p>
+</blockquote>
+
+<p>Com esse módulo instaldo, vamos migrar os códigos dos dois endpoints criados, para dois novos arquivos que serão criados dentro de routes, o indexEndPoint.js e o livrosEndPoint.js.</p>
+
+<p>O arquivo indexEndPoint.js deve ficar assim:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="na">status</span><span class="p">:</span> <span class="s2">"NTask API"</span><span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Já o livrosEndPoint.js deve ficar assim:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+            <span class="na">livros</span> <span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="na">nome</span> <span class="p">:</span> <span class="s2">"O Hobbit"</span><span class="p">},</span> 
+                <span class="p">{</span><span class="na">nome</span> <span class="p">:</span> <span class="s2">"E não sobrou nenhum"</span><span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">})</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Agora edite o index.js para que ele possa carregar ambos os endPoints e então iniciar o servidor, para isso faça:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">consign</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'consign'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+
+<span class="nx">consign</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">"routes"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">into</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+    
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Servidor rodando na porta 3000"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Para melhorar ainda mais as coisas, vamos remover esse código de iniciar o servidor do index.js e vamos colocar ele no novo arquivo, chamado boot.js que fica dentro do diretório config.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Código do arquivo /config/boot.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Servidor rodando na porta 3000"</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Agora em index.js, você precisa fazer o consign carregar o boot,js, para isso basta adicionar o seguinte código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">consign</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">"routes"</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="s2">"config/boot.js"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">into</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Agora inicie o servidor e veja se tudo está funcionando normalmente.</p>
+
+<h4 id="trabalhando-com-mongo">Trabalhando com Mongo</h4>
+
+<p>Chegou a hora de fazer a coisa ficar mais interessante, vamos adicionar um banco de dados na história, o escolhido para esse projeto é o MongoDB, o banco NoSQL mais popular do mercado.</p>
+
+<p>Trabalhar com Mongo no Node é bastante simples, primeiro vamos começar instalando um módulo especificamente para isso, é o moongose, para isso execute:</p>
+
+<blockquote>
+  <p>$  npm install mongoose –save</p>
+</blockquote>
+
+<p>Com o moongose instalado, se conecte ao mongo e crie um banco de dados, no meu caso chamei ele de livrosapi. Depois de criar o banco vamos criar o arquivo <strong>banco.js</strong> dentro de <strong>config</strong>, aonde vamos criar o código de conexão com o banco.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Código do arquivo /config/banco.js</span>
+<span class="kd">var</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'mongodb://localhost/livrosapi'</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Conectado ao banco com sucesso"</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Agora precisamos atualizar o <strong>index.js</strong> para que ele carregue o <strong>banco.js</strong>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">consign</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">"config/banco.js"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="s1">'routes'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="s2">"config/boot.js"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">into</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Agora você pode iniciar o servidor e se tudo der certo, você vai ver a mensagem de conexão com o banco ser exibida.</p>
+
+<p>Com o banco conectado, vamos criar o modelo de livros, para isso crie o arquivo <strong>Livro.js</strong> dentro de <strong>/models</strong>. O modelo vai ser a representação da collection livro que será criada</p>
+
+<p>Primeiro vamos importar o mongoose e os Schema do mongosse, para isso faça:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Código do arquivo /models/Livro.js</span>
+<span class="kd">var</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Schema</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Todo Schema no mongoose é mapeado para uma collection no Mongo, assim se queremos criar uma collection de livros, basta crair um schema desse carinha, para isso faça:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">livroSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+    <span class="na">nome</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+    <span class="na">autor</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+    <span class="na">editora</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">nome</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+        <span class="na">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+    <span class="p">}</span> 
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>É possível trabalhar muito mais coisas em um Schema, porém como esse é um projeto simples, não há necessidade de adicionar mais detalhes, mas abaixo deixo o link da documentação oficial do Moongoose, sobre Schemas, aconselho que você dê uma olhada depois, não se preocupe, a documentação é muito boa, cheia de exemplos e com zero enrolação.</p>
+
+<p><a href="https://mongoosejs.com/docs/guide.html">Schemas</a></p>
+
+<p>Para que possamos usar o nosso schema na aplicação, precisamos exportar ele como um modelo do mongoose, para isso adicione o código abaixo, no final do <strong>Livro.js</strong>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s2">"Livro"</span><span class="p">,</span> <span class="nx">livroSchema</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Um model do Mongoose são construtores sofisticados compilados a partir de schemas, esses carinhas são responsáveis por criar e ler documentos do banco de dados. Para utilizar um model, você vai ver que não há muita diferença do que se faz para usar uma classe JavaScript.</p>
+
+<p>Agora com nosso modelo criado, vamos trocar o retorno estático do endpoint de livros, por uma consulta a nossa collection de livros, para isso abra o arquivo e primeiro adicione um require para o nosso modelo de livros:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Livro</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../models/Livro'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Então atualize o GET, adicionando o seguinte código, no lugar do retorno existente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">livros</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">livros</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Agora pare o servidor e inicie novamente, então acesse <strong>http://localhost:3000/livros</strong>, se tudo deu certo, você vai visualizar como retorno <strong>[]</strong>, isso ocorre pois não há nenhum livro adicionado na collection de livros, porém se você acessar seu banco vai ver que a collection agora foi criada.</p>
+
+<p>Vamos deixar as coisas mais divertidas, e vamos criar um método POST, para adiçao de novos livros a lista, para isso, no endpoint de livros, adicione o seguinte código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">livro</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Livro</span> <span class="p">({</span>
+            <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span> 
+            <span class="na">autor</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">autor</span><span class="p">,</span> 
+            <span class="na">editora</span> <span class="p">:</span> <span class="p">{</span>
+                <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span> 
+                <span class="na">email</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">email</span> 
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">livro</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resultado</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> 
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Como você pode ver, as coisas mudam um pouco em relação ao GET, mas nada de outro mundo. Primeiro criamos um novo livro, e passamos para ele os valores que foram encaminhados na requisição, por meio do “req.body.campo”.</p>
+
+<p>Depois basta fazer um save no nosso livro, que o mongosse vai se encarregar de salvar ele no banco, o save porém precisa receber uma function de callback, que no nosso caso vai enviar em caso de erro, o log do erro, ou em caso de sucesso o status ok, para quem fez a requisição.</p>
+
+<p>Porém para que esse código funcione, é necessário instalar o módulo <strong>body-parser</strong>, que é responsável por fazer parser de objetos JSON, para isso execute:</p>
+
+<blockquote>
+  <p>$ npm install body-parser –save</p>
+</blockquote>
+
+<p>E então altere o index.js, fazendo com que o body-parser seja usado:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">consign</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'consign'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'body-parser'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="nx">consign</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">include</span><span class="p">(</span><span class="s2">"config/banco.js"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="s1">'routes'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="s2">"config/boot.js"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">into</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Para testar se tudo está funcionando você vai precisar reinciar o servidor e então fazer uma requisição do tipo POST. Para realizar requisições de teste como esse, gosto de utilizar o plugin <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">Rest Client</a>, porém você pode utilizar o Postman ou qualquer outra apkicação que lhe agrade mais.</p>
+
+<p>Uma requisição de teste  para nossa aplicação seria algo como:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//localhost</span><span class="p">:</span><span class="mi">3000</span><span class="err">/livros</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">content-type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E não sobrou nenhum"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agatha Christie"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"editora"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Globo Livros"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"globoLivros@globo.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Se tudo funcionou como deveria, você vai receber uma resposta como essa:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-Powered-By</span><span class="p">:</span> <span class="s">Express</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/plain; charset=utf-8</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">2</span>
+<span class="na">ETag</span><span class="p">:</span> <span class="s">W/"2-nOO9QiTIwXgNtWtBJezz8kv3SLc"</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 02 Sep 2018 03:56:57 GMT</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+
+OK
+</code></pre></div></div>
+
+<p>Se você verificar no mongo, vai ver que um livro foi adicionado.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"5b8b5f88ff64f356216f36d0"</span><span class="err">)</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"editora"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Globo Livros"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"globoLivros@globo.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"nome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"E não sobrou nenhum"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Agatha Christie"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"__v"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Repita o processo de adição para gerar massa de dados, adicione pelo menos três livros.</p>
+
+<p>Agora vamos crair um GET para retornar apenas um livro, com base no id passado na URL, para isso faça:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">_id</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resultado</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p>A única diferença aqui em relação ao outro GET que criamos antes, é que estamos passando um parâmetro pro find, o _id, fazendo com que a consulta seja filtrada por esse parâmetro. Quando nada é passado todos os elementos da collection serão retornados.</p>
+
+<p>Bastante parecido com o POST por sua vez, o PUT é utilizado para atualizar um ou mais registros, para implementar esse cara, basta adicionar o código abaixo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span><span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">findByIdAndUpdate</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> 
+                <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span> 
+                <span class="na">autor</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">autor</span><span class="p">,</span> 
+                <span class="na">editora</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span>
+                    <span class="na">email</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">email</span>
+                <span class="p">}</span>
+            <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span> 
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Repare no <strong>findByIdAndUpdate</strong> utilizado, essa é uma função muito bacana do mongoose, ele vai fazer a consulta do objeto pelo id passado como parâmetro e já vai fazer o update conforme os campos passados no body.</p>
+
+<p>Para fechar um CRUD completo falta o DELETE e esse é bem simples de se fazer, para isso faça:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="nx">Usuario</span><span class="p">.</span><span class="nx">deleteOne</span><span class="p">({</span><span class="na">_id</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"401"</span><span class="p">);</span>
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p>A única coisa de diferente aqui foi a utilização de deleteOne(), usado justamente para deletar um registro que corresponda ao valor passado como parâmetro. Como passamos o _id, que é um campo único, poderiamos utilizar o delete() ao invés do deleteOne(), pois em teoria nunca devem existir dois objetos com o mesmo id, porém o deleteOne() é mais seguro garantino que nunca mais de um registro seja removido.</p>
+
+<p>Ao final de tudo, o código completo fica assim:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Livro</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../models/Livro'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">livros</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">livros</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"/livros"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">livro</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Livro</span><span class="p">({</span>
+            <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span> 
+            <span class="na">autor</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">autor</span><span class="p">,</span> 
+            <span class="na">editora</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span>
+                <span class="na">email</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">email</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">livro</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="na">_id</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resultado</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span><span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">Livro</span><span class="p">.</span><span class="nx">findByIdAndUpdate</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> 
+                <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span> 
+                <span class="na">autor</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">autor</span><span class="p">,</span> 
+                <span class="na">editora</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">nome</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span>
+                    <span class="na">email</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">editora</span><span class="p">.</span><span class="nx">email</span>
+                <span class="p">}</span>
+            <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span> 
+    <span class="p">});</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">"/livros/:id"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="nx">Usuario</span><span class="p">.</span><span class="nx">deleteOne</span><span class="p">({</span><span class="na">_id</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"401"</span><span class="p">);</span>
+
+            <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="s2">"200"</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Você também pode encontrar o projeto completo no meu GitHub, clicando <a href="https://github.com/Hallessandro/api-livros">aqui.</a></p>
+
+<p>Bem isso é tudo por hora pessoal, espero que esse post tenha sido útil e qualquer coisa estou a disposição nas redes sociais. Vlw, flw!</p>
+
+
+<span class="post-date">
+  Written on
+  
+  September
+  1st
+    ,
+  2018
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#6 - Construindo uma API REST com Node js&amp;url=/programming/api-rest-node.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming/api-rest-node.html&amp;title=#6 - Construindo uma API REST com Node js" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming/api-rest-node.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programmi/req-http-on-angular.html">
+                #2 - Consumindo uma API com Angular
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>April 29, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/introducao-meteor-parte2.html">
+                #4 - Introdução ao Meteor - Parte 2
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>June 6, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programmi/introducao-meteor.html">
+                #3 - Introdução ao Meteor
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>June 3, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/javascript/array_concat.html">
+                #17 - Quick Tip - Array.prototype.concat()
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>July 17, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/creating_charts_with_js.html">
+                #15 - Creating charts with JavaScript using PlotlyJS
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>March 24, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/controlando_arduino_com_j5.html">
+                #11 - Johnny Five - Controlling a Arduino Uno with JavaScript
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>December 1, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

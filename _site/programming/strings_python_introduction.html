@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #12 - A Brief Introduction of Strings in Python | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/str_python.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#12 - A Brief Introduction of Strings in Python | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#12 - A Brief Introduction of Strings in Python" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hey guys, today I will talk about how to use strings In Python, and some useful methods available. Strings in python are exactly equal a strings in other languages like Java or Javascript, a sequence of one or more characters." />
+<meta property="og:description" content="Hey guys, today I will talk about how to use strings In Python, and some useful methods available. Strings in python are exactly equal a strings in other languages like Java or Javascript, a sequence of one or more characters." />
+<link rel="canonical" href="http://localhost:4000/programming/strings_python_introduction.html" />
+<meta property="og:url" content="http://localhost:4000/programming/strings_python_introduction.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/str_python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-07T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#12 - A Brief Introduction of Strings in Python","dateModified":"2019-01-07T00:00:00-03:00","datePublished":"2019-01-07T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/str_python.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/strings_python_introduction.html"},"url":"http://localhost:4000/programming/strings_python_introduction.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Hey guys, today I will talk about how to use strings In Python, and some useful methods available. Strings in python are exactly equal a strings in other languages like Java or Javascript, a sequence of one or more characters.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #12 - A Brief Introduction of Strings in Python
+</h1>
+
+
+  <img src="/assets/img/coverPosts/str_python.png">
+
+
+<p>Hey guys, today I will talk about how to use strings In Python, and some useful methods available. Strings in python are exactly equal a strings in other languages like Java or Javascript, a sequence of one or more characters.</p>
+
+<p>Strings can be created within either single quotes ‘ or double quotes “ in Python, so to create a string, enclose a sequence of characters in one or the other, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="s">"This is a string in double quotes."</span> 
+<span class="s">'This is a string in single quotes.'</span>
+</code></pre></div></div>
+
+<p>For print the value of a string, just use the print() function, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"This is a string"</span><span class="p">)</span> <span class="n">Output</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<h3 id="string-concatenation">STRING CONCATENATION</h3>
+
+<p>Concatenation means joining strings together end-to-end to create a new string. In Python to concatenate strings, we use the + operator. The + operator is used for sum the values of two or more numbers, but when used with strings, this guy concatenate the value of the strings, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">string1</span> <span class="o">=</span> <span class="s">"Hello"</span> 
+<span class="n">string2</span> <span class="o">=</span> <span class="s">"world"</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">string1</span> <span class="o">+</span> <span class="n">string2</span><span class="p">)</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Hello</span> <span class="n">world</span>
+</code></pre></div></div>
+
+<p>Note; The + operator not be used with two different data types, we can’t concatenate strings and integers for example, if you try something like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="err">“</span><span class="n">Jose</span><span class="err">”</span> <span class="o">+</span> <span class="mi">51</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The following error will be receive:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="s">'t convert '</span><span class="nb">int</span><span class="s">' object to str implicitly.</span><span class="err">
+</span></code></pre></div></div>
+
+<p>If you want to create the string “Jose51”, you could this by putting the number 51 in quotes, or using the function str(), like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Jose"</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="mi">51</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Jose51</span>
+</code></pre></div></div>
+
+<p>You can concatenate how many strings you want, but your code will not be very readable with too many concatenations, so use sparingly.</p>
+
+<h3 id="string-replication">STRING REPLICATION</h3>
+
+<p>If you need print a same string several times, you can easily do this with the * operator. Like the + operator, the * operator has a different use when used with numbers. Let’s print “Go Packers “ 5 times, without typing this 9 times or using CTRL C + CTRL V.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Go Packers "</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Go</span> <span class="n">Packers</span> <span class="n">Go</span> <span class="n">Packers</span> <span class="n">Go</span> <span class="n">Packers</span> <span class="n">Go</span> <span class="n">Packers</span> <span class="n">Go</span> <span class="n">Packers</span>
+</code></pre></div></div>
+
+<h3 id="using-string-formatters">USING STRING FORMATTERS</h3>
+
+<p>In the string class, Python has a very useful method called str.format(), this guy allows you to do variable substitutions and value formatting. This let’s you concatenate elements together within a string through positional formatting.</p>
+
+<p>Formatters work by putting a pair of curly braces {} into a string and calling the str.format() method, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Jose has {} books."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Jose</span> <span class="n">has</span> <span class="mi">5</span> <span class="n">books</span><span class="o">.</span>
+</code></pre></div></div>
+
+<p>Formatters also can be used for multiple placeholders, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Jose has {} oranges and {} apples."</span>  
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Jose</span> <span class="n">has</span> <span class="mi">5</span> <span class="n">oranges</span> <span class="ow">and</span> <span class="mi">3</span> <span class="n">apples</span><span class="o">.</span>
+</code></pre></div></div>
+
+<p>When we leave the curly braces empty without any parameters, Python will replace the values passed through the str.format() in order. The values passed to the str.format() method are essentially a tuple, and each individual value contained in the tuple can be called by your index number.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Jose has {0} oranges and {1} apples."</span>  
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Jose</span> <span class="n">has</span> <span class="mi">5</span> <span class="n">oranges</span> <span class="ow">and</span> <span class="mi">3</span> <span class="n">apples</span><span class="o">.</span>
+</code></pre></div></div>
+
+<p>Knowing the index number, we can change the order the parameters, like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Jose has {1} oranges and {0} apples."</span>  
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">Jose</span> <span class="n">has</span> <span class="mi">3</span> <span class="n">oranges</span> <span class="ow">and</span> <span class="mi">5</span> <span class="n">apples</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h3 id="an-overview-through-another-useful-methods">AN OVERVIEW THROUGH ANOTHER USEFUL METHODS</h3>
+
+<ul>
+  <li><strong>find():</strong> Returns the index of first occurrence of a substring passed as parameter:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Hello world"</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"world"</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>index():</strong> Returns the index of a substring:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"Hello world"</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"world"</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>join():</strong> Returns a string in which the string elements of sequence have been joined by str separator:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="n">s</span> <span class="o">=</span> <span class="s">"-"</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">s</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">seq</span> <span class="p">)</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">c</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>lower():</strong> Returns a lowercase string:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_str</span> <span class="o">=</span> <span class="s">"HELLO"</span>  
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">hello</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>upper():</strong> Returns a uppercase string:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="n">my_str</span> <span class="o">=</span> <span class="s">"hello"</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">HELLO</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>swapcase()</strong>: Swap uppercase strings to lowercase and vice versa:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="n">my_str</span> <span class="o">=</span> <span class="s">"hello"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">HELLO</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>rstrip():</strong> This method returns a copy of the string in which all chars have been stripped from the end of the string (default whitespace characters):</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"     this is string example....wow!!!     "</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">string</span> <span class="n">example</span><span class="o">....</span><span class="n">wow</span><span class="err">!!!</span>  
+<span class="nb">str</span> <span class="o">=</span> <span class="s">"88888888this is string example....wow!!!8888888"</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'8'</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="mi">88888888</span><span class="n">this</span> <span class="ow">is</span> <span class="n">string</span> <span class="n">example</span><span class="o">....</span><span class="n">wow</span><span class="err">!!!</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>strip():</strong> This method returns a copy of the string in which all chars have been stripped from the beginning and the end of the string:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">​</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"0000000this is string example....wow!!!0000000"</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'0'</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">string</span> <span class="n">example</span><span class="o">....</span><span class="n">wow</span><span class="err">!!!</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>replace():</strong> Returns a copy of the string with all occurrences of substring old replaced by new. If the optional argument max is given, only the first count occurrences are replaced:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span> <span class="o">=</span> <span class="s">"this is string example....wow!!! this is really string"</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"is"</span><span class="p">,</span> <span class="s">"was"</span><span class="p">))</span>
+<span class="n">Output</span><span class="p">:</span> <span class="n">thwas</span> <span class="n">was</span> <span class="n">string</span> <span class="n">example</span><span class="o">....</span><span class="n">wow</span><span class="err">!!!</span> <span class="n">thwas</span> <span class="n">was</span> <span class="n">really</span> <span class="n">string</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"is"</span><span class="p">,</span> <span class="s">"was"</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="n">thwas</span> <span class="n">was</span> <span class="n">string</span> <span class="n">example</span><span class="o">....</span><span class="n">wow</span><span class="err">!!!</span> <span class="n">thwas</span> <span class="ow">is</span> <span class="n">really</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>startswith():</strong> Returns true if found matching string otherwise false:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">str</span> <span class="o">=</span> <span class="s">"this is string example....wow!!!"</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span> <span class="s">'this'</span> <span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="bp">True</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span> <span class="s">'is'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">))</span> 
+<span class="n">Output</span><span class="p">:</span> <span class="bp">True</span> 
+<span class="k">print</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span> <span class="s">'this'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">))</span>
+<span class="n">Output</span><span class="p">:</span> <span class="bp">False</span><span class="sb">``</span><span class="err">`</span>
+</code></pre></div></div>
+
+<p>Besides these, there are other methods that are worth your attention, so I recommend taking a look at the <a href="https://docs.python.org/2/library/string.html">official documentation</a> of the String class.</p>
+
+<p>So, this is all folks, I wish a happy new year for everyone, and soon I will be back with some new post. Thanks for reading!</p>
+
+
+<span class="post-date">
+  Written on
+  
+  January
+  7th,
+  2019
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#12 - A Brief Introduction of Strings in Python&amp;url=/programming/strings_python_introduction.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming/strings_python_introduction.html&amp;title=#12 - A Brief Introduction of Strings in Python" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming/strings_python_introduction.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/using_args_and_kwargs_python.html">
+                #14 - How to use *args and **kwargs
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 26, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/http_server_with_python.html">
+                #13 - How to create a HTTP server with Python
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 22, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

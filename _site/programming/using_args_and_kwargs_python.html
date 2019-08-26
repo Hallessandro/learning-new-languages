@@ -1,0 +1,410 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #14 - How to use *args and **kwargs | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/python.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#14 - How to use *args and **kwargs | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#14 - How to use *args and **kwargs" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hi guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and today in this post let’s talk again about Python, this time how to use *args and **kwargs in our Python functions." />
+<meta property="og:description" content="Hi guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and today in this post let’s talk again about Python, this time how to use *args and **kwargs in our Python functions." />
+<link rel="canonical" href="http://localhost:4000/programming/using_args_and_kwargs_python.html" />
+<meta property="og:url" content="http://localhost:4000/programming/using_args_and_kwargs_python.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-26T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#14 - How to use *args and **kwargs","dateModified":"2019-01-26T00:00:00-03:00","datePublished":"2019-01-26T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/using_args_and_kwargs_python.html"},"url":"http://localhost:4000/programming/using_args_and_kwargs_python.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Hi guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and today in this post let’s talk again about Python, this time how to use *args and **kwargs in our Python functions.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #14 - How to use *args and **kwargs
+</h1>
+
+
+  <img src="/assets/img/coverPosts/python.png">
+
+
+<p>Hi guys, my name is Hallessandro, I am a software developer that currently works and live in Brazil, and today in this post let’s talk again about Python, this time how to use *args and **kwargs in our Python functions.</p>
+
+<p>Firstly let’s create a simple function to sum two numbers:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="o">.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Our function is simple but works like as expected, when the numbers 1 and 3 are passed as parameters, the result will be 4. But what happens when three numbers are passed as parameters? This happens:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">TypeError</span><span class="p">:</span> <span class="n">soma</span><span class="p">()</span> <span class="n">takes</span> <span class="n">exactly</span> <span class="mi">2</span> <span class="n">arguments</span> <span class="p">(</span><span class="mi">3</span> <span class="n">given</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="../assets/img/memes/pikachu.jpg" alt="drawing" style="width:200px;" /></p>
+
+<p>We can’t pass three numbers for our function, because they just be defined for receive two numbers. So is it, I need create another function to receive and sum three numbers? And for sum four numbers, will be another function? Man, this seens like a lot of dumb code.</p>
+
+<h3 id="using-args">Using *args</h3>
+
+<blockquote>
+  <p>The asterisk (*) before the word args, it’s really important, don’t forget it.</p>
+</blockquote>
+
+<p><strong>*args</strong> can be used as a parameter to send a non-keyworded variable-length argument list to functions, so if you suspect that you may need more arguments later on, you need use *args instead pass normal arguments, something like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c">#Output: 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c">#Output: 3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c">#Output: 6</span>
+<span class="k">print</span><span class="p">(</span><span class="n">soma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="c">#Output: 10</span>
+</code></pre></div></div>
+<p><strong>*args</strong> it’s nothing more than a list, so you can iterate over it and get all the elements values and sum. This way the function can receive 1, 2, 10, 20 or how many arguments do you need, there’s no problem, our function now can deal with this.</p>
+
+<h3 id="using-kwargs">Using **kwargs</h3>
+
+<p>**kwargs works like *args, but instead pass a list as argument to a function, a dictionary is used. With **kwargs is possible pass how many arguments you would like.</p>
+
+<p>Let’s see a example of how kwargs work.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">names_of_chars</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">names_of_chars</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s">"Sagat"</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s">"Luigi"</span><span class="p">,</span> <span class="n">name3</span><span class="o">=</span><span class="s">"Batman"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The result of the code above is:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s">'name2'</span><span class="p">:</span> <span class="s">'Luigi'</span><span class="p">,</span> <span class="s">'name3'</span><span class="p">:</span> <span class="s">'Batman'</span><span class="p">,</span> <span class="s">'name1'</span><span class="p">:</span> <span class="s">'Sagat'</span><span class="p">}</span>
+</code></pre></div></div>
+<p>Because the dictionary data type is unordered, we received the keyvalue pairs in a random order, but it is important to note that a dictionary called **kwargs is created and we can work with it just like we can  work with other dictionaries.</p>
+
+<p>Let’s create another program to show one time more how kwargs works.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">names_of_games</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"The name of the {} is {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="n">names_of_games</span><span class="p">(</span><span class="n">game1</span><span class="o">=</span><span class="s">"Plants vs Zombies"</span><span class="p">,</span> <span class="n">game2</span><span class="o">=</span><span class="s">"Titanfall 2"</span><span class="p">,</span> <span class="n">game3</span><span class="o">=</span><span class="s">"Halo 5"</span><span class="p">,</span> <span class="n">game4</span><span class="o">=</span><span class="s">"God of War"</span><span class="p">,</span> <span class="n">game5</span><span class="o">=</span><span class="s">"Celeste"</span><span class="p">)</span>
+
+<span class="c">#Output</span>
+<span class="c">#The name of the game5 is Celeste</span>
+<span class="c">#The name of the game4 is God of War</span>
+<span class="c">#The name of the game3 is Halo 5</span>
+<span class="c">#The name of the game2 is Titanfall 2</span>
+<span class="c">#The name of the game1 is Plants vs Zombies</span>
+</code></pre></div></div>
+<p>How you can see the kwargs lost the order of elements, but we can pass how many we would like.</p>
+
+<h3 id="using-args-and-kwargs-in-function-calls">Using *args and **kwargs in Function Calls</h3>
+
+<p>We can also use *args and **kwargs to pass arguments into functions. First, let’s look at an example with *args.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_elements</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The result is {} "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="n">n3</span><span class="p">))</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">sum_elements</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="c">#Output </span>
+<span class="c">#The result is 13</span>
+</code></pre></div></div>
+<p>How you can see in the code above, instead pass three arguments to the function sum_elements, we pass just one using the args syntax. It’s possible combine the args syntax with named parameters like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_elements</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value3</span><span class="p">,</span> <span class="n">value4</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The value is {}."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value1</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The value is {}."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value2</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The value is {}."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value3</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The value is {}."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value4</span><span class="p">))</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">print_elements</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>  
+
+<span class="c">#Output</span>
+<span class="c">#The value is 3.</span>
+<span class="c">#The value is 10.</span>
+<span class="c">#The value is 5.</span>
+<span class="c">#The value is 9.</span>
+</code></pre></div></div>
+<p>Similarly, kwargs can be used to call a function, let’s see a example of how do this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Kwarg 1: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k1</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Kwarg 2: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k2</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Kwarg 3: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k3</span><span class="p">))</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s">"k1"</span><span class="p">:</span><span class="s">"Sagat"</span><span class="p">,</span> <span class="s">"k2"</span><span class="p">:</span><span class="s">"Ryu"</span><span class="p">,</span> <span class="s">"k3"</span><span class="p">:</span><span class="s">"Cammy"</span><span class="p">}</span>
+<span class="n">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="c">#Output</span>
+<span class="c"># Kwarg 1: Sagat</span>
+<span class="c"># Kwarg 2: Ryu</span>
+<span class="c"># Kwarg 3: Cammy</span>
+</code></pre></div></div>
+<p>So how you can see when calling a function, we can use *args and **kwargs to pass arguments.</p>
+
+<p>For now this is all folks, thanks for reading and feel free to contact me.</p>
+
+
+<span class="post-date">
+  Written on
+  
+  January
+  26th,
+  2019
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#14 - How to use *args and **kwargs&amp;url=/programming/using_args_and_kwargs_python.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming/using_args_and_kwargs_python.html&amp;title=#14 - How to use *args and **kwargs" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming/using_args_and_kwargs_python.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/http_server_with_python.html">
+                #13 - How to create a HTTP server with Python
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 22, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/strings_python_introduction.html">
+                #12 - A Brief Introduction of Strings in Python
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>January 7, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/javascript/array_concat.html">
+                #17 - Quick Tip - Array.prototype.concat()
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>July 17, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/clean/code/meaningful_names.html">
+                #16 - Meaningful Names - What I Learned With Clean Code
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 13, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/creating_charts_with_js.html">
+                #15 - Creating charts with JavaScript using PlotlyJS
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>March 24, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

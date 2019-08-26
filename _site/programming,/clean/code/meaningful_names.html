@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #16 - Meaningful Names - What I Learned With Clean Code | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/meaningful _names.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#16 - Meaningful Names - What I Learned With Clean Code | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#16 - Meaningful Names - What I Learned With Clean Code" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hi everyone, I’m back for a new post, this time with something a little different. In this post we will talk about the chapter “Meaningful Names” of the book Clean Code, write by Robert Cecil Martin also know as Uncle Bob." />
+<meta property="og:description" content="Hi everyone, I’m back for a new post, this time with something a little different. In this post we will talk about the chapter “Meaningful Names” of the book Clean Code, write by Robert Cecil Martin also know as Uncle Bob." />
+<link rel="canonical" href="http://localhost:4000/programming,/clean/code/meaningful_names.html" />
+<meta property="og:url" content="http://localhost:4000/programming,/clean/code/meaningful_names.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/meaningful%20_names.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-13T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#16 - Meaningful Names - What I Learned With Clean Code","dateModified":"2019-05-13T00:00:00-03:00","datePublished":"2019-05-13T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/meaningful%20_names.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming,/clean/code/meaningful_names.html"},"url":"http://localhost:4000/programming,/clean/code/meaningful_names.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Hi everyone, I’m back for a new post, this time with something a little different. In this post we will talk about the chapter “Meaningful Names” of the book Clean Code, write by Robert Cecil Martin also know as Uncle Bob.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #16 - Meaningful Names - What I Learned With Clean Code
+</h1>
+
+
+  <img src="/assets/img/coverPosts/meaningful _names.png">
+
+
+<p>Hi everyone, I’m back for a new post, this time with something a little different. In this post  we will talk about the chapter “Meaningful Names” of the book <a href="https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>, write by Robert Cecil Martin also know as Uncle Bob.</p>
+
+<h4 id="insignificant-names">Insignificant Names</h4>
+
+<p>Names are in everywhere on our development environment, variables, functions, classes and etc. So if names are in everywhere, this means that they are a important thing on our code, and this is right.</p>
+
+<p>A bad name can make you lose hours, sometime days to solve problems, bad names can lie to you, revealing things that there are no more truths (If it were one day). So the focus of this post is talk about names and what you can do to improve ours names.</p>
+
+<p>Before we start, for explain how this post is structured,  it is split in topics, with the same name of the book and for every topic I put a sentence by the book and a explanation of the topic.</p>
+
+<h4 id="using-intention-revealing-names">Using Intention-Revealing Names</h4>
+
+<blockquote>
+  <p>Names  should reveal intent. Choosing god names takes time but saves more than it takes.</p>
+</blockquote>
+
+<blockquote>
+  <p>We need to take care with ours names and change them without afraid, when find better ones.</p>
+</blockquote>
+
+<p>A good name needs to answer three questions. Why it exists, what it does and how it is used. If a name needs a comment to explain something, then the name does not reveal it’s intent, and maybe it’s time to change it.</p>
+
+<p>A string called <strong>n</strong> used to store the name of a city, don’t reveal anything. But maybe you can think, that you can put a comment to explain what <strong>n</strong> is it, but instead to put a comment, just change the name for something more meaningful.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//cityName is a simple but good name</span>
+<span class="n">String</span> <span class="n">cityName</span> <span class="o">=</span> <span class="s">"Toronto"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">n</span> <span class="o">=</span> <span class="s">"Vancouver"</span><span class="o">;</span> <span class="c1">//Store the name of a city</span>
+</code></pre></div></div>
+
+<p>Check the piece of code above, instead to use a comment to say what the variable store, we can just put this information in the name of the variable.</p>
+
+<p>About comments I recommend that you read the chapter 4 of Clean Code. Maybe we can talk about this chapter in another post, but read it, it’s a great and controversial chapter.</p>
+
+<p>Avoid single letter names, they can only be used as local variable inside very short methods. The rule to use or not single letter names is very simple. The name should correspond to the size of its scope, so if you have a method with two lines, it’s ok use a single letter name, but if you have a piece of code with more then ten lines, please avoid this.</p>
+
+<h4 id="avoid-disinformation">Avoid Disinformation</h4>
+
+<p>Be careful with your names, avoid leave false clues that will obscure the meaning of something. Abbreviations can be good to write, but is terrible to read the code, so don’t be lazy, write good names with useful information.</p>
+
+<p>A simple example is that you don’t should refer a group of books as bookList, unless that the group it’s actually a list, if not, the name may lead a developer to false conclusions.</p>
+
+<p>Comments are not the solution here, you don’t need a comment, just create names meaningful.</p>
+
+<h4 id="use-pronounceable-names">Use Pronounceable Names</h4>
+
+<blockquote>
+  <p>If you can’t pronounce it, you can’t discuss it without sounding like an idiot.</p>
+</blockquote>
+
+<p>I think that the sentence above explain everything, names are serious thing, so don’t write things unpronounceable, don’t be cute and most important, if you have a good joke, keep it to the lunch time, don’t put it in the code, there’s no fun in disinformation.</p>
+
+<h4 id="use-searchable-names">Use Searchable Names</h4>
+
+<p>Serious if you have a method used to save the value of a book, don’t call the method as save, unless that your method be the only used to save something in the code.</p>
+
+<p>If your code works and is used for something, is very likely that in sometime in the future, you or someone else needs to found a specific variable or method inside the code, but if are ten different methods called save, how we will identify which are we looking for?</p>
+
+<p>If you have a method that save the books name and other that saves the price, called this methods as saveNameOfBook() and savePriceOfBook(), instead of called both as save, when you need to find one or other the names will help a lot.</p>
+
+<h4 id="one-word-per-concept">One Word per Concept</h4>
+
+<p>If you have three classes that implements a method called insert used to insert values in a list, when you create a new class and a method that concatenate two values inside a new variable, this method should not be called insert, because in the scope of your project, insert is used to insert values in a list, so insert should be used for concatenate values, choose another name.</p>
+
+<p>Every name in the code should have a unique meaningful, don’t use the same word to do things very different.</p>
+
+<h4 id="class-and-method-names">Class and Method Names</h4>
+
+<blockquote>
+  <p><strong>Classes</strong> and objects should have noun or noun phrase names like Customer, WikiPage,
+Account, and AddressParser. Avoid words like Manager, Processor, Data, or Info in the name
+of a class. A class name should not be a verb.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Methods</strong> should have verb or verb phrase names like postPayment, deletePage, or save.
+Accessors, mutators, and predicates should be named for their value and prefixed with get,
+set, and is according to the javabean standard.</p>
+</blockquote>
+
+<h4 id="use-names-from-solution-and-problem-domain">Use Names from Solution and Problem Domain</h4>
+
+<p>Don”t use names that are out of context and are not from that specific domain. It’s more natural for someone that works in automotive industry to use “engine” instead “power source”, so you should not use random names, or names that you like, is very important that a name is related with the domain.</p>
+
+<h4 id="conclusion">Conclusion</h4>
+
+<p>Clean Code is a great book, talk by myself, this book changes the way that I works. My intention with this post is to expose some of the good things that I learn when I read Clean Code, but this post is a simplified edition of the chapter, so I recommend that you read the entire chapter (and book, you will not regret).</p>
+
+<p>If you read and want to talk about something, feel free to send me a message. :-D Bye folks, until next time.</p>
+
+
+
+<span class="post-date">
+  Written on
+  
+  May
+  13th,
+  2019
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#16 - Meaningful Names - What I Learned With Clean Code&amp;url=/programming,/clean/code/meaningful_names.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming,/clean/code/meaningful_names.html&amp;title=#16 - Meaningful Names - What I Learned With Clean Code" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming,/clean/code/meaningful_names.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/javascript/array_concat.html">
+                #17 - Quick Tip - Array.prototype.concat()
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>July 17, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/creating_charts_with_js.html">
+                #15 - Creating charts with JavaScript using PlotlyJS
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>March 24, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

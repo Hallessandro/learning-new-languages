@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto | Hallessandro' Adventures
+    
+  </title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Olá terráqueos, neste primeiro post vamos ver como instalar e criar nosso primeiro app utilizando o Ionic 3. O Ionic, caso você não conheça, é um framework para desenvolvimento de aplicações móveis híbridas, de forma rápida e de fácil aprendizado." />
+<meta property="og:description" content="Olá terráqueos, neste primeiro post vamos ver como instalar e criar nosso primeiro app utilizando o Ionic 3. O Ionic, caso você não conheça, é um framework para desenvolvimento de aplicações móveis híbridas, de forma rápida e de fácil aprendizado." />
+<link rel="canonical" href="http://localhost:4000/journal/first-app-ionic.html" />
+<meta property="og:url" content="http://localhost:4000/journal/first-app-ionic.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-02T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto","dateModified":"2018-04-02T00:00:00-03:00","datePublished":"2018-04-02T00:00:00-03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/journal/first-app-ionic.html"},"url":"http://localhost:4000/journal/first-app-ionic.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Olá terráqueos, neste primeiro post vamos ver como instalar e criar nosso primeiro app utilizando o Ionic 3. O Ionic, caso você não conheça, é um framework para desenvolvimento de aplicações móveis híbridas, de forma rápida e de fácil aprendizado.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto
+</h1>
+
+
+
+<p>Olá terráqueos, neste primeiro post vamos ver como instalar e criar nosso primeiro app utilizando o Ionic 3. O Ionic, caso você não conheça, é um framework para desenvolvimento de aplicações móveis híbridas, de forma rápida e de fácil aprendizado.</p>
+
+<p><strong>1. Configurando o ambiente</strong></p>
+
+<p>Para instalar o Ionic você vai precisar ter instalado o Node e o npm, você pode fazer isso baixando o Node <a href="https://nodejs.org/en/">aqui</a>.</p>
+
+<p>Se você está utilizando Linux, pode fazer a instalação por meio do apt-get, basta executar os comandos abaixo:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+</code></pre></div></div>
+
+<p>Se quiser, você também pode ver um tutorial mais completo da instalação, nesse link <a href="https://www.digitalocean.com/community/tutorials/como-instalar-o-node-js-no-ubuntu-16-04-pt">aqui</a>, é um tutorial da DigitalOcean, bastante detalhado e com outras opções de download além do apt.</p>
+
+<p>Depois de instalado o Node e o npm você vai precisar instalar o Ionic CLI e o Cordova, para isso execute o comando abaixo:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g ionic cordova
+</code></pre></div></div>
+<blockquote>
+  <p>O -g presente no comando, indica que essa vai ser uma instalação global, por isso é necessário adicionar sudo ao comando, caso esteja no Linux ou Mac, ou abrir o cmd como administrador caso esteja no Windows.</p>
+</blockquote>
+
+<p>Pronto, se você conseguiu instalar tudo o que precisa, agora você está pronto para criar seu primeiro app com Ionic e é isso que vamos fazer no tópico 2. :-D</p>
+
+<p>Antes de criar o app, você vai precisar possuir intalado um editor de texto na sua máquina, instale o da sua preferência, até onde sei os mais famosos são Sublime Text, Visual Studio Code e Atom, sinta se a vontade para usar qualquer um dos três. Abaixo vou listar os links para download de cada um, além de um link com instruções para instalação no Linux. No Windows a instalação de todos é tão simples que nem precisa de link. :-D</p>
+
+<ol>
+  <li>Visual Studio Code
+    <ul>
+      <li><a href="https://code.visualstudio.com">Download</a></li>
+      <li><a href="https://code.visualstudio.com/docs/setup/linux">Instalação</a></li>
+    </ul>
+  </li>
+  <li>Atom
+    <ul>
+      <li><a href="https://atom.io">Download</a></li>
+      <li><a href="https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux">Instalação</a></li>
+    </ul>
+  </li>
+  <li>Sublime Text
+    <ul>
+      <li><a href="https://www.sublimetext.com/3">Download</a></li>
+      <li><a href="https://www.omgubuntu.co.uk/2017/05/how-to-install-sublime-text-ubuntu-linux">Instalação no Linux</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>2. Criando nosso primeiro app</strong></p>
+
+<p>O Ionic por padrão já possui alguns templates que podemos usar para criar nosso projeto, vamos usar o blank que é o mais simples, mas caso tenha interesse, <a href="https://ionicframework.com/docs/cli/starters.html">aqui</a> você pode encontrar mais detalhes de todos os templates disponíveis.</p>
+
+<p>Para criar o projeto, execute o comando abaixo:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ionic start nome_app blank
+</code></pre></div></div>
+<p>Troque “nome_app” por um nome de sua prefêrencia, esse vai ser o nome do seu projeto.</p>
+
+<p>Agora que você já criou sua app, é bem provável que você deseje ver como ela está no momento, para isso execute o comando abaixo:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ionic serve --lab
+</code></pre></div></div>
+
+<p>Ao fim da execução uma janela do seu navegador padrão será aberta, por padrão no meu caso, a janela exibiu a versão de iOS, mas caso queira ver a versão de Android ou as duas ao mesmo tempo, você deve acessar o menu Plataforms, e marcar às caixas dos sistemas que deseja ver, marcando iOS e Android você deve estar vendo algo como o da imagem abaixo:</p>
+
+<p><img src="../assets/img/telaapp.png" alt="Tela inicial da app" /></p>
+
+<p>Chegamos ao fim dessa primeira parte, vimos ai que com alguns comandos conseguimos instalar o Ionic e criar nosso primeiro app. No próximo post vamos ver como melhorar essa nossa primeira tela, que está bem sem graça atualmente, sendo assim, até próxima pessoal.</p>
+
+
+<span class="post-date">
+  Written on
+  
+  April
+  2nd
+    ,
+  2018
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto&amp;url=/journal/first-app-ionic.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/journal/first-app-ionic.html&amp;title=#1 - Desenvolvendo um app mobile com Ionic 3, Parte I - Instalação e criação do projeto" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/journal/first-app-ionic.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

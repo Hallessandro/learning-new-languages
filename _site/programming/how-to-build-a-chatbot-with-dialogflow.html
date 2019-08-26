@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #9 - How to build a Chatbot with DialogFlow | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/dialogflow.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#9 - How to build a Chatbot with DialogFlow | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#9 - How to build a Chatbot with DialogFlow" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hi guys, today I will talk about a very interesting thing called chatbot and how build one with DialogFlow, so I hope you enjoy." />
+<meta property="og:description" content="Hi guys, today I will talk about a very interesting thing called chatbot and how build one with DialogFlow, so I hope you enjoy." />
+<link rel="canonical" href="http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html" />
+<meta property="og:url" content="http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/dialogflow.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-14T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#9 - How to build a Chatbot with DialogFlow","dateModified":"2018-10-14T00:00:00-03:00","datePublished":"2018-10-14T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/dialogflow.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html"},"url":"http://localhost:4000/programming/how-to-build-a-chatbot-with-dialogflow.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Hi guys, today I will talk about a very interesting thing called chatbot and how build one with DialogFlow, so I hope you enjoy.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #9 - How to build a Chatbot with DialogFlow
+</h1>
+
+
+  <img src="/assets/img/coverPosts/dialogflow.png">
+
+
+<p>Hi guys, today I will talk about a very interesting thing called chatbot and how build one with DialogFlow, so I hope you enjoy.</p>
+
+<h3 id="what-is-a-chatbot">What is a chatbot</h3>
+
+<p>According to <a href="https://en.oxforddictionaries.com/definition/chatbot">Oxford Dictionaries</a>, a chatbot is:</p>
+
+<blockquote>
+  <p>**“A computer program designed to simulate conversation with human users, especially over the Internet.”</p>
+</blockquote>
+
+<p>You can may ask yourself, why I will want to make something to simulate a conversation with humans? For answer this, imagine a example where you have a web system for book cars.</p>
+
+<p>Your system is accessed daily for dozens of users, and for book a car or get information about something, the user need to talk with someone, like an attendant,  so how much users you have, more attendant will be required for a better service.</p>
+
+<p>But many users juts want book a car or may want  to know simple things like which cars are available, this type of interaction it’s exactly the type which can be made by a chatbot.</p>
+
+<p>Chatbot are a great option to improve the communication with your customers. Forgot things like “Stay on line, your call is very important for us” or searches in dozens of FAQ pages, users don’t have time for this. A chatbot improve your response rate ensuring that everyone will be answered as quickly as possible.</p>
+
+<h3 id="first-steps-with-dialogflow">First steps with DialogFlow</h3>
+
+<p>For this post we will create a chatbot to order pizza, where a consumer can order a pizza of three different flavors, but before we start, we need talk about agent, intents and entities, three things very important when working with DialogFlow.</p>
+
+<p><strong>Agent</strong>: A agent is essentially the bot itself, think of a agent like a small kid, you have to teach him how to communicate and understanding.</p>
+
+<p><strong>Intents</strong>: Generally a intent is a collection of sentences which have the same meaning and the bot know how to answer to.</p>
+
+<p>Inside a intent we have the training phrases and the responses. The first is a collection of sample sentences that we pass to the bot learn. Responses are a set of one or more phrases which will be presented as answers to training phrases.</p>
+
+<p><strong>Entities</strong>: Entities according to the documentation is Entities is a mechanism for identifying and extracting useful data from natural language inputs.  When used together intents, allows for example, knowing the delivery address of a pizza order.</p>
+
+<p>Are three types of entities in DialogFlow, the system entities, developer entities and the user entities.</p>
+
+<ol>
+  <li><strong>System entity</strong>: These are pre-built entities provided by Dialogflow in order to facilitate handling the most popular common concepts like date, hour, numbers and others basic informations.</li>
+  <li><strong>Developer entity</strong>: Are entities created by the developers, to deal with the particularities of each system. For example, a bot used to book bikes, can have a entity to deal with the type of service, like tire change, repair or tune-up.</li>
+  <li><strong>User entity</strong>: Are special type of entities, that can be defined for a specific user session. According to the documentation, an example for this is a scenario could be when you have a @playlist entity that has generic playlist. As playlists are user-specific, @playlist entity could be defined in a request or for a given session.</li>
+</ol>
+
+<blockquote>
+  <p>It’s possible create entities which are combinations of two or more others entities.</p>
+</blockquote>
+
+<p>Finished the part of the explanation, let’s start with the practice, for this open the <a href="https://dialogflow.com/">DialogFlow page</a> and select the option “Go To Console” on top right corner. When you do this, will be required authentication, one of options to made this is with a Google account.</p>
+
+<p>After login, it’s time to create our first agent, for this is required to define the name, language and the timezone in my case i choose PizzaOrderDemo as the name and English as a language.</p>
+
+<p>When the process of creation ends, you will be redirect to the intents page and on this page you you will see there are already two intents created, the fallback and the welcome intent, these two guys made exactly what their names say.</p>
+
+<p>Open the welcome intent, you will see a lot of training phrases and responses, don’t remove the training phrases, but remove all the responses and create a new response, something like:</p>
+
+<blockquote>
+  <p>Hi, would you like to order a pizza? Enter yes if you want or not interested if you not.</p>
+</blockquote>
+
+<p>Save your changes and click in Save button, a message will be appear, to tell you that the bot is training, wait a few seconds and we’ll test our changes. First say something like hi or hello to receive the new welcome message, something like this:</p>
+
+<p><img src="../assets/img/post9/first-test.png" alt="first-test" /></p>
+
+<p>After this, say something weird and see what happens, one of the default responses defined in fallback intent will be displayed. When are more of one responses the system randomly chooses one of then to answer you. If you want, change the responses of fallback intent, in my case a remove all the defaults responses and create a new, like this:</p>
+
+<blockquote>
+  <p>I missed what you said. Would you like to order a pizza?</p>
+</blockquote>
+
+<p>Now let’s create a new intent to show the available pizzas to the user, for this click in the plus symbol on the intent menu:</p>
+
+<p><img src="../assets/img/post9/new_intent.png" alt="new_intent" /></p>
+
+<p>Now we have to define three things, the name of intent (I called pizza_available), the training phrases and the responses. Feel free to define the training phrases and more of one response if you want, I defined just one.</p>
+
+<blockquote>
+  <p>We have pizza of Pepperoni, Bacon and Sausage.</p>
+</blockquote>
+
+<p>Made the changes, save and test.</p>
+
+<p>Now let’s create a intent to deal with order pizza, but in this intent we have a different thing, here we need to deal with the flavor chosen by the user, for this we need to create a entity. Click in the plus symbol on right side of Entities menu and click in Create Entity button.</p>
+
+<p>Now you need define the name of the entity and the values, something like this:</p>
+
+<p><img src="../assets/img/post9/entity_pizza.png" alt="entity_pizza" /></p>
+
+<p>Save the changes and back to the order pizza intent.</p>
+
+<p>In order pizza intent, if you create a training phrase like “Please, give me a Sausage pizza”, you will see that the sausage word will be recognized as a pizza_flavor entity, like this:</p>
+
+<p><img src="../assets/img/post9/entity_used.png" alt="entity_used" /></p>
+
+<p>The flavor of pizza is a important information, so we can define that it’s a  required information, for this scroll your page until “Action and parameters”, and mark the required checkbox.</p>
+
+<p>Another good options for improve this behavior is define a prompt to ask the user when the flavor is not passed, for this click in “Define prompts” and write a phrase to be send</p>
+
+<p><img src="../assets/img/post9/define_Prompt.png" alt="define_Prompt" /></p>
+
+<p>Now we need to define the answer for this intent, before explain I will show you how a define the my response:</p>
+
+<p><img src="../assets/img/post9/response_final.png" alt="response_final" /></p>
+
+<p>First thing, the <strong>$pizza_flavor</strong> in the text response was used to add dynamically in the response the type of pizza request by the user, this work like template string on JS for example, concatenating text and values.</p>
+
+<p>Second thing, the option “Set this intent as end of conversation” this made exactly what you think, after the response the dialog ends.</p>
+
+<p>Now let’s create a intent to deal with the not interesting situation, no mystery here, add some training phrases like Not interesting, cancel, no and more, and one or more responses, but here the response need to end the conversation so mark the “Set this intent as end of conversation” option.</p>
+
+<p>Now save the changes and congratulations you have create your first bot, now it’s time to test him a lot. So this is all folks, until next time!</p>
+
+<h3 id="good-places-to-learn-more">Good places to learn more</h3>
+
+<p><a href="https://dialogflow.com/docs">Docs</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=yFyNouueu2g">BlondieBytes channel on YouTube</a></p>
+
+
+
+<span class="post-date">
+  Written on
+  
+  October
+  14th,
+  2018
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#9 - How to build a Chatbot with DialogFlow&amp;url=/programming/how-to-build-a-chatbot-with-dialogflow.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programming/how-to-build-a-chatbot-with-dialogflow.html&amp;title=#9 - How to build a Chatbot with DialogFlow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programming/how-to-build-a-chatbot-with-dialogflow.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/criando-bot-com-hubot.html">
+                #10 - Criação e integração de um bot ao RocketChat
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>November 18, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+
+<head>  
+  <title>
+    
+      #3 - Introdução ao Meteor | Hallessandro' Adventures
+    
+  </title>
+    
+    <meta property="og:image" content="/assets/img/coverPosts/meteor.png" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hallessandro' Adventures" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="Hallessandro' Adventures | Developed with Jekyll and Github Pages"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>#3 - Introdução ao Meteor | Hallessandro’ Adventures</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="#3 - Introdução ao Meteor" />
+<meta name="author" content="Hallessandro D´villa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Olá terráqueos, faz um bom tempo que não posto nada novo, muito pelo fato que ultimamente não vinha trabalhando com coisas novas. Porém isso mudou nos últimos dias graças ao Meteor. Se você não sabe o que é, assim como eu não sabia, você precisa conhecer." />
+<meta property="og:description" content="Olá terráqueos, faz um bom tempo que não posto nada novo, muito pelo fato que ultimamente não vinha trabalhando com coisas novas. Porém isso mudou nos últimos dias graças ao Meteor. Se você não sabe o que é, assim como eu não sabia, você precisa conhecer." />
+<link rel="canonical" href="http://localhost:4000/programmi/introducao-meteor.html" />
+<meta property="og:url" content="http://localhost:4000/programmi/introducao-meteor.html" />
+<meta property="og:site_name" content="Hallessandro’ Adventures" />
+<meta property="og:image" content="http://localhost:4000/coverPosts/meteor.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-03T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"#3 - Introdução ao Meteor","dateModified":"2018-06-03T00:00:00-03:00","datePublished":"2018-06-03T00:00:00-03:00","@type":"BlogPosting","image":"http://localhost:4000/coverPosts/meteor.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programmi/introducao-meteor.html"},"url":"http://localhost:4000/programmi/introducao-meteor.html","author":{"@type":"Person","name":"Hallessandro D´villa"},"description":"Olá terráqueos, faz um bom tempo que não posto nada novo, muito pelo fato que ultimamente não vinha trabalhando com coisas novas. Porém isso mudou nos últimos dias graças ao Meteor. Se você não sabe o que é, assim como eu não sabia, você precisa conhecer.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">Hallessandro' Adventures</a>
+    <!-- <small class="masthead-subtitle">Developed with Jekyll and Github Pages</small>-->
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about.html">About</a>
+    
+      <a href="/menu/writing.html">Posts</a>
+    
+      <a href="/menu/contact.html">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  #3 - Introdução ao Meteor
+</h1>
+
+
+  <img src="/assets/img/coverPosts/meteor.png">
+
+
+<p>Olá terráqueos, faz um bom tempo que não posto nada novo, muito pelo fato que ultimamente não vinha trabalhando com coisas novas. Porém isso mudou nos últimos dias graças ao Meteor. Se você não sabe o que é, assim como eu não sabia, você precisa conhecer.</p>
+
+<p>Se você acessar a página do Meteor, <a href="https://www.meteor.com/">aqui</a>, você vai encontrar a seguinte descrição “THE FASTEST WAY TO BUILD JAVASCRIPT APPS”, mas o que isso quer dizer?</p>
+
+<p>Rapaz, o negócio é realmente rápido, primeiro de tudo é que todo o seu código do back ao front vai ser desenvolvido em uma única linguagem, JavaScript. Segundo, nada de configurações chatas e complicadas, aqui nem o banco você precisa se preocupar em configurar, o Meteor já faz isso para você, quando você criar um projeto ele já vem com um MongoDB prontinho para uso.</p>
+
+<p>Algo que achei sensacional quandro criei meu projeto, é que não preciso criar classes de modelo duas vezes, algo bem comum quando se tem uma aplicação cliente/servidor.</p>
+
+<p>Um projeto Meteor é divido em duas pastas bases, client e server, tudo que você colocar em client vai ser utilizado pelo cliente e tudo que for em server pelo servidor. O grande truque aqui, é que tudo que for para ser usado tanto por client quanto por server, fica em diretórios na raiz do projeto, fora de client e server. Assim tanto client quanto server conseguem visualizar e utilizar seu conteúdo.</p>
+
+<p>Instalar e criar um projeto também é bem simples, basta apenas seguir os passos abaixo:</p>
+
+<blockquote>
+  <p>Para Windows é necessário ter instalado o Chocolatey e então executar o comando abaixo:</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>choco install meteor
+</code></pre></div>  </div>
+  <p>Para Linux e Mac é só executar:</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://install.meteor.com/ | sh
+</code></pre></div>  </div>
+</blockquote>
+
+<p>Depois de instalado para criar o primeiro projeto basta executar:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meteor create myapp
+</code></pre></div></div>
+<p>O processo de criação pode demorar alguns minutos, mas logo depois de finalizado é possível testar a aplicação, para isso siga os passos abaixo:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd myapp
+meteor npm install
+meteor
+# Meteor server running on: http://localhost:3000/
+</code></pre></div></div>
+
+<p>Ao acessar o endereço informado pelo servidor, é possível ver uma simples aplicação como a apresentada na imagem abaixo. Apesar de simples ela é bem interessante pois mostra uma das coisas mais legais do Meteor, a capacidade de alterar o conteúdo sem precisar recarregar a página. Faça o teste, clique várias vezes no botão e veja o contador aumentar sem recarregar a página em momento algum.</p>
+
+<p><img src="../assets/img/meteor.png" alt="Resultado" /></p>
+
+<p>Depois de testar, abra o diretório do projeto criado no seu editor de texto preferido, e acesse o diretório client. Dentro dele existem três arquivos, eles são os responsáveis pelo exemplo que você viu quando rodou o projeto. Não vamos precisar mais deles então pode deletar.</p>
+
+<p>Agora é preciso criar o arquivo HTML base de tudo, para isso na raiz de client crie o arquivo index.html, dentro dele declare o código abaixo:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Olá terráqueos!<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+<p>Note que não há uma tag html nem declaração de doctype e tudo que um arquivo HTML5 normalmente tem, mas não se preocupe, o Meteor vai fazer isso por você.</p>
+
+<p>Agora vamos criar nosso primeiro componente. Um componente de modo geral é um carinha responsável por montar/gerenciar um pedaço especifico da tela, algo como header, footer, sidemenu e por ai vai. O resultado final de uma aplicação é a utilização de vários componentes em conjunto.</p>
+
+<p>Para manter as coisas organizadas, dentro de client crie uma pasta chamada views e dentro de views crie outro diretório chamado lista. Já dentro de lista crie um arquivo lista.html que deve conter o código abaixo:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">"lista"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Teste<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Mais um teste<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<p>Quando lidamos com aplicações Meteor, não é necessário rescrever todo HTML padrão em cada arquivo, lembra quando falei que um componente é responsável por um pedaço da tela? Pronto, dentro da tag template você deve declarar apenas o HTML pelo qual aquele componente é responsável.</p>
+
+<p>o name aplicado na tag template é nome pelo qual seu template vai ser chamado quando for necessário sua execução. Para testar altera index.html, deixando o código da seguinte forma:</p>
+
+<p><img src="../assets/img/meteorPost/code1.png" alt="Resultado final" /></p>
+
+<p>Salve e veja o resultado no navegador. Se você deixou o servidor rodando enquanto fazia as alterações deve ter notado que o servidor do Meteor já é bem esperto e já se atualiza sozinho para você, assim como a página se recarrega no navegador.</p>
+
+<p>Se tudo ocorreu como esperado você deve estar vendo a lista com os dois elementos logo abaixo do “Olá terráqueos”</p>
+
+<p>Nosso primeiro componente funcionou, mas é bem sem graça ele apenas exibe uma lista estática no HTML, vamos fazer ele buscar essa lista do banco. Primeiro, crie uma pasta chamada de models, na raiz do seu projeto meteor, isso permite que tanto client quanto server possam utilizar esses modelos.</p>
+
+<p>Dentro de models crie o arquivo livros.js, com o seguinte código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">Livros</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mongo</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s2">"livros"</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Isso vai fazer com que seja criada uma coleção com o nome de livros no MongoDB.</p>
+
+<p>Agora dentro do diretório de lista crie o arquivo lista.js.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Template</span><span class="p">.</span><span class="nx">lista</span><span class="p">.</span><span class="nx">helpers</span><span class="p">({</span>
+	<span class="na">livros</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">Livros</span><span class="p">.</span><span class="nx">find</span><span class="p">({});</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>Alguns pontos devem ser destacados nesse trecho de código. O primeiro é que quando se trabalha com Meteor é bem comum encontrar helpers ou events dentro de arquivos como este. Os helpers são bem utilizados quando queremos recuperar informações e os events quando queremos lidar com algum evento que vai acarretar em alguma ação, como por exemplo o clique do botão de salvar de um formulário deve saber o que fazer com os dados.</p>
+
+<p>O lista que vai entre Template e helpers é o nome do seu componente. “livros” é o nome que vai ser chamado para acesso a lista de dados retornada na consulta ao banco, já o “Livros” que vai junto do find é o modelo definido dentro de models.</p>
+
+<p>Para utilizar essa implementação é preciso chamar isso no template de lista, para isso atualize o código de lista.html para:</p>
+
+<p><img src="../assets/img/meteorPost/code2.png" alt="Resultado final" /></p>
+
+<p>O bloco each nada mais é do que um loop igual ao for each, que vai iterar sobre todos os elementos de livros, criando um li com seu nome para cada um. Salve e veja o resultado no navegador, se tudo ocorreu como deveria você não deve estar vendo nada além da mensgam de olá terráqueo, isso pois em nenhum momento cadastramos algum livro.</p>
+
+<p>Para resolver isso vamos criar um novo componente, para o cadastro desta vez. Dentro de views crie o diretório novo, com os arquivos novo.html e novo.js.</p>
+
+<p>Dentro de novo.html declare o seguinte código abaixo, que como você pode ver não é nada além de um simples formulário com um campo e um botão.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">"novo"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"livro"</span><span class="nt">&gt;</span>Livro<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"livro"</span> <span class="na">name=</span><span class="s">"livro"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Cadastrar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+<p>Dentro de novo.js declare o código abaixo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Template</span><span class="p">.</span><span class="nx">novo</span><span class="p">.</span><span class="nx">events</span><span class="p">({</span>
+    <span class="s2">"submit form"</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">template</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#livro"</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">nome</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+            <span class="nx">Livros</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span><span class="na">nome</span><span class="p">:</span> <span class="nx">nome</span><span class="p">});</span>
+            <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>Aqui as coisas mudam um pouco, agora não temos mais helpers e sim events, isso pois como falei mais acima, events são indicados para lidar com ações resultantes de alguma interação do usuário, no nosso caso queremos que quando for clicado no botão de Cadastrar o livro seja salvo no banco e exibido na tela.</p>
+
+<p>O primeiro passo para que isso funcione é evitar que o evento padrão de form ocorra quando clicado no botão, para isso é utilizado <strong>e.preventDefault();</strong>.  Depois utilizamos um pouco de jQuery para pegar o campo e o valor dele passando os para variaveis. Por último o valor resgatado do form é salvo atráves de um insert e o input tem seu valor zerado.</p>
+
+<p>Agora para testar basta apenas que você chame o componente novo no index.html, para isso faça:</p>
+
+<p><img src="../assets/img/meteorPost/code3.png" alt="Resultado final" /></p>
+
+<p>Agora salve alguns livros e veja que em nenhum momento a página é recarregada, isso é muito legal, o Meteor consegue atuailizar a tela sem que o usuário perceba isso.</p>
+
+<p>Bem, isso é tudo pessoal, a ideia aqui era montar um exemplo simples e rápido, para iniciar você no Meteor, se você ficou curioso na documentação oficial do Meteor, <a href="https://www.meteor.com/tutorials">aqui</a>, existem três tutoriais que vai permitir que você conheça um pouco mais dessa belezura. Nas referências deixarei alguns links que achei interessante e qualquer dúvida fique a vontade em me mandar uma mensagem. Vlw!</p>
+
+<p><strong>Referências:</strong></p>
+
+<ol>
+  <li><a href="https://www.meteor.com/">Site oficial</a></li>
+  <li><a href="https://www.youtube.com/watch?v=9494-2E4riQ">Build A Meteor.js App In 45 Minutes</a></li>
+  <li><a href="https://www.youtube.com/watch?v=eOi3F6Kbl7E">What Is Meteor?</a></li>
+  <li><a href="https://www.youtube.com/watch?v=6_8B3mi1m18">Why use meteor</a></li>
+  <li><a href="https://www.alura.com.br/curso-online-meteorjs">Meteor: Crie single page applications com JavaScript</a></li>
+  <li><a href="https://www.casadocodigo.com.br/products/livro-meteor">Criando aplicações web real-time com JavaScript</a></li>
+</ol>
+
+
+<span class="post-date">
+  Written on
+  
+  June
+  3rd
+    ,
+  2018
+  by
+  
+    Hallessandro D´villa
+  
+</span>
+
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=#3 - Introdução ao Meteor&amp;url=/programmi/introducao-meteor.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/programmi/introducao-meteor.html&amp;title=#3 - Introdução ao Meteor" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/programmi/introducao-meteor.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >You may also enjoy:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/introducao-meteor-parte2.html">
+                #4 - Introdução ao Meteor - Parte 2
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>June 6, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming,/javascript/array_concat.html">
+                #17 - Quick Tip - Array.prototype.concat()
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>July 17, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/creating_charts_with_js.html">
+                #15 - Creating charts with JavaScript using PlotlyJS
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>March 24, 2019</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/controlando_arduino_com_j5.html">
+                #11 - Johnny Five - Controlling a Arduino Uno with JavaScript
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>December 1, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/programming/api-rest-node.html">
+                #6 - Construindo uma API REST com Node js
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>September 1, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://github.com/Hallessandro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://twitter.com/_MrDvilla" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.linkedin.com/in/hallessandro/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.facebook.com/hallessandro.dvilla" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:hd.jesus93@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date"><a href="/menu/about.html">Developed with Jekyll and Github Pages by Hallessandro D´villa</a></div>
+</footer>
+
+  </div>
+
+</body>
+</html>
