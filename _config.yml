@@ -20,7 +20,7 @@ permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "Apprendre d'autres langues"
+title:		           "Apprendre d'autres Langues"
 description:	       'Developed with Jekyll and Github Pages'
 author:              'Hallessandro D´villa'
 
