@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#01 - [EN] Frases curtas muito usadas no inglês"
+title: "#EN01 - Short Sentences Very Used in English"
 author: "Hallessandro D´villa"
 categories: english
 tags: [english]
